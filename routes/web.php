@@ -21,3 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::middleware(['auth'])->group(function () {
+    // Users
+    Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('user.profile');
+    Route::get('/profile/{id}/user', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+
+});
