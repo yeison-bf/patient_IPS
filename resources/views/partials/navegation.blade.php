@@ -32,7 +32,7 @@
                             <span class="avatar avatar-online"><img
                                     src="{{ asset('build/assets/images/portrait/small/avatar-s-1.png') }}"
                                     alt="avatar"></span><span class="mr-1"><span
-                                    class="user-name text-bold-700">{{ Auth::user()->fullname }}</span></span></a>
+                                    class="user-name text-bold-700">{{ Auth::user()->fullname }}&nbsp; &#160; </span><i class="fa-solid fa-caret-down"></i></span></a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item">
                                 <i class="ft-award"></i>{{ Auth::user()->fullname }}

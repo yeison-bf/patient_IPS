@@ -28,4 +28,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('user.profile');
     Route::get('/profile/{id}/user', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 
+
+    //Patiens
+    Route::get('/patients', [App\Http\Controllers\PatiensController::class, 'index'])->name('patiens.list');
+    Route::post('/patientsPost', [App\Http\Controllers\PatiensController::class, 'store'])->name('patients.register');
+    Route::put('/patientEdit/{id}', [App\Http\Controllers\PatiensController::class, 'edit'])->name('patiens.update');
+
 });

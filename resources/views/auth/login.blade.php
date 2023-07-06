@@ -54,7 +54,7 @@
                         <form role="form" method="POST" action="{{ route('login') }}">
                             @csrf
                             <fieldset class="form-label-group">
-                                <input type="email"  class="form-control @error('email') is-invalid @enderror" placeholder="Your Username" aria-describedby="email-addon"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input type="email" autofocus class="form-control @error('email') is-invalid @enderror" placeholder="Your Username" aria-describedby="email-addon"  name="email" value="{{ old('email') }}" required autocomplete="email" >
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
