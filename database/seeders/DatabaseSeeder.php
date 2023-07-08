@@ -16,9 +16,15 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory()->create([
             'document' => 1051822577,
-            'fullname' => 'Yeison Barrios',
+            'name' => 'Yeison ',
+            'lastname' => 'Barrios Funieles',
             'role' => 1,
             'email' => 'test@example.com',
+            'profesion' => 'PEDIATRA',
+            'city' => 'Cartagena de Indias',
+            'location' => 'Cra 45 Cl 25 - 36',
+            'numberPhone' => '3046048014',
         ]);
+
     }
 }

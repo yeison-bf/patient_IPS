@@ -31,7 +31,11 @@ Route::middleware(['auth'])->group(function () {
 
     //Patiens
     Route::get('/patients', [App\Http\Controllers\PatiensController::class, 'index'])->name('patiens.list');
-    Route::post('/patientsPost', [App\Http\Controllers\PatiensController::class, 'store'])->name('patients.register');
-    Route::put('/patientEdit/{id}', [App\Http\Controllers\PatiensController::class, 'edit'])->name('patiens.update');
+    Route::get('/patientsPost', [App\Http\Controllers\PatiensController::class, 'showRegister'])->name('show.register');
+    Route::post('/patientsPost', [App\Http\Controllers\PatiensController::class, 'register'])->name('patients.register');
+    Route::get('/patientEdit/{id}', [App\Http\Controllers\PatiensController::class, 'showEdit'])->name('show.update');
+
+
+    Route::put('/patientActive/{id}', [App\Http\Controllers\PatiensController::class, 'activePatient'])->name('patiens.active');
 
 });

@@ -1,43 +1,67 @@
-    <div class="main-menu menu-fixed menu-dark menu-bg-default rounded menu-accordion menu-shadow">
-        <div class="main-menu-content"><a class="navigation-brand d-none d-md-block d-lg-block d-xl-block"
-            href="{{ route('home') }}"><img class="brand-logo" alt="CryptoDash admin logo"
-                    src="{{ asset('build/assets/images/logo/logo.png') }}" /></a>
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="active"><a href="{{ route('home') }}"><i class="icon-grid"></i><span
-                            class="menu-title" data-i18n="">Dashboard</span></a>
+    <div class="sidebar" data-color="white" data-active-color="danger" style="overflow-x: hidden;">
+        <div class="logo">
+            <a href="{{ route('home') }}" class="simple-text logo-mini">
+                <div class="logo-image-small">
+                    <img src="{{ asset('build/assets/img/logo-small.png') }}">
+                </div>
+                <!-- <p>CT</p> -->
+            </a>
+            <a href="{{ route('home') }}" class="simple-text logo-normal">
+                Creative Tim
+                <!-- <div class="logo-image-big">
+            <img src="{{ asset('build/assets/img/logo-big.png') }}">
+          </div> -->
+            </a>
+        </div>
+        <div class="sidebar-wrapper" style="overflow-x: hidden;">
+            <ul class="nav">
+                <li class="active ">
+                    <a href="{{ route('home') }}">
+                        <i class="nc-icon nc-bank"></i>
+                        <p>Inicio</p>
+                    </a>
                 </li>
-                <li class=" nav-item"><a href="{{ route('patiens.list') }}"><i class="icon-users"></i><span class="menu-title"
-                            data-i18n="">Pacientes</span></a>
+                <li>
+                    <a href="{{ route('patiens.list') }}">
+                        <i class="nc-icon nc-single-02"></i>
+                        <p>Pacientes</p>
+                    </a>
                 </li>
-                <li class=" nav-item"><a ><i class="icon-layers"></i><span class="menu-title"
-                            data-i18n="">Buy ICO</span></a>
+                <li>
+                    <a href="./map.html">
+                        <i class="nc-icon nc-pin-3"></i>
+                        <p>Maps</p>
+                    </a>
                 </li>
-                <li class=" nav-item"><a ><i class="icon-wallet"></i><span class="menu-title"
-                            data-i18n="">Wallet</span></a>
+                <li>
+                    <a href="./notifications.html">
+                        <i class="nc-icon nc-bell-55"></i>
+                        <p>Notifications</p>
+                    </a>
                 </li>
-                <li class=" nav-item"><a ><i class="icon-shuffle"></i><span class="menu-title"
-                            data-i18n="">Transactions</span></a>
+                <li>
+                    <a href="./user.html">
+                        <i class="nc-icon nc-single-02"></i>
+                        <p>User Profile</p>
+                    </a>
                 </li>
-                <li class=" nav-item"><a ><i class="icon-support"></i><span class="menu-title"
-                            data-i18n="">FAQ</span></a>
+                <li>
+                    <a href="./tables.html">
+                        <i class="nc-icon nc-tile-56"></i>
+                        <p>Table List</p>
+                    </a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="icon-user-following"></i><span class="menu-title"
-                            data-i18n="">Account</span></a>
-                    <ul class="menu-content">
-                        <li><a class="menu-item" >Profile</a>
-                        </li>
-                        <li><a class="menu-item" >Login History</a>
-                        </li>
-                        <li class="navigation-divider"></li>
-                        <li><a class="menu-item" href="#">Misc</a>
-                            <ul class="menu-content">
-                                <li><a class="menu-item" >Login</a>
-                                </li>
-                                <li><a class="menu-item" >Register</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="./typography.html">
+                        <i class="nc-icon nc-caps-small"></i>
+                        <p>Typography</p>
+                    </a>
+                </li>
+                <li class="active-pro">
+                    <a href="./upgrade.html">
+                        <i class="nc-icon nc-spaceship"></i>
+                        <p>Upgrade to PRO</p>
+                    </a>
                 </li>
             </ul>
         </div>

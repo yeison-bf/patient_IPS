@@ -14,12 +14,27 @@ class PatiensController extends Controller
      */
     public function index()
     {
+        // $client = new Client();
+        // $responseCity = $client->get('https://api-colombia.com/api/v1/city');
+        // $dataCity = json_decode($responseCity->getBody(), true);
+
+        $patients = ModelsPatiens::all();
+        return view('patients.list', compact('patients'));
+        // return response()->json($patients);
+    }
+
+
+     /**
+     * Display a listing of the resource.
+     */
+    public function showRegister()
+    {
         $client = new Client();
         $responseCity = $client->get('https://api-colombia.com/api/v1/city');
         $dataCity = json_decode($responseCity->getBody(), true);
 
         $patients = ModelsPatiens::all();
-        return view('patients.list', compact('patients', 'dataCity'));
+        return view('patients.register', compact('patients', 'dataCity'));
         // return response()->json($patients);
     }
 
@@ -27,7 +42,7 @@ class PatiensController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function register(Request $request)
     {
 
         $patient = new ModelsPatiens;
@@ -60,16 +75,17 @@ class PatiensController extends Controller
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function showEdit(Request $request, $id)
     {
-        $patien = ModelsPatiens::findOrFail($id);
-        $patien->estado = !$patien->estado; 
-        $patien->save();
-        return redirect()->route('patiens.list');
+        $client = new Client();
+        $responseCity = $client->get('https://api-colombia.com/api/v1/city');
+        $dataCity = json_decode($responseCity->getBody(), true);
+
+        $patients = ModelsPatiens::find($id);
+        return view('patients.update', compact('patients', 'dataCity'));
+        // return response()->json($patients);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -78,6 +94,20 @@ class PatiensController extends Controller
     {
         //
     }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function activePatient(string $id)
+    {
+        $patien = ModelsPatiens::findOrFail($id);
+        $patien->estado = !$patien->estado; 
+        $patien->save();
+        return redirect()->route('patiens.list');
+    }
+
+    
 
     /**
      * Remove the specified resource from storage.

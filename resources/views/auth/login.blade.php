@@ -9,22 +9,22 @@
     <meta name="keywords" content="admin template, CryptoDash Cryptocurrency Dashboard Template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="ThemeSelection">
     <title>Account Login - CryptoDash - Free Cryptocurrency Dashboard Template + Bitcoin Dashboard</title>
-    <link rel="apple-touch-icon" href="{{ asset('build/assets/images/ico/apple-icon-120.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('build/assets/images/ico/favicon.ico')}}">
+    <link rel="apple-touch-icon" href="{{ asset('build/assets/login/images/ico/apple-icon-120.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('build/assets/login/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i|Comfortaa:300,400,500,700" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/css-rtl/vendors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/vendors/css/forms/icheck/icheck.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/vendors/css/forms/icheck/custom.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/css-rtl/vendors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/vendors/css/forms/icheck/icheck.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/vendors/css/forms/icheck/custom.css')}}">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/css-rtl/app.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/css-rtl/custom-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/css-rtl/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/css-rtl/custom-rtl.css')}}">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/css-rtl/core/menu/menu-types/vertical-compact-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/vendors/css/cryptocoins/cryptocoins.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/css-rtl/pages/account-login.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/css-rtl/core/menu/menu-types/vertical-compact-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/vendors/css/cryptocoins/cryptocoins.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('build/assets/login/css-rtl/pages/account-login.css')}}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     {{-- <link rel="stylesheet" type="text/css" href="../../../assets/css/style-rtl.css"> --}}
@@ -41,7 +41,7 @@
         <!-- image -->
         <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 col-12 p-0 text-center d-none d-md-block">
             <div class="border-grey border-lighten-3 m-0 box-shadow-0 card-account-left height-400">
-                <img src="{{ asset('build/assets/images/pages/account-login.png')}}" class="card-account-img width-200" alt="card-account-img">
+                <img src="{{ asset('build/assets/login/images/pages/account-login.png')}}" class="card-account-img width-200" alt="card-account-img">
             </div>
         </div>
         <!-- login form -->
@@ -105,17 +105,17 @@
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
     <!-- BEGIN VENDOR JS-->
-    <script src="{{ asset('build/assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('build/assets/login/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="{{ asset('build/assets/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('build/assets/login/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN MODERN JS-->
-    <script src="{{ asset('build/assets/js/core/app-menu.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('build/assets/js/core/app.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('build/assets/login/js/core/app-menu.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('build/assets/login/js/core/app.js')}}" type="text/javascript"></script>
     <!-- END MODERN JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="{{ asset('build/assets/js/scripts/forms/form-login-register.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('build/assets/login/js/scripts/forms/form-login-register.js')}}" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
   </body>
 </html>

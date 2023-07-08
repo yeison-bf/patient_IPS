@@ -1,35 +1,31 @@
 @extends('layouts.app')
-@include('../modals.modals')
-
-@section('name_module')
-    <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
-        <h3 class="content-header-title mb-0 d-inline-block">Pacientes</h3>
-        <div class="row breadcrumbs-top d-inline-block">
-            <div class="breadcrumb-wrapper col-12">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a>
-                    </li>
-                    <li class="breadcrumb-item active">Listado de pacientes
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
-@endsection
+{{-- @include('../modals.modals') --}}
 
 @section('content')
-    <div class="row">
-        <div class="col-12 col-md-12">
+
+<style>
+    div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: 300px;
+  height: 40px;
+  margin: 20px 0 20px 0;
+}
+
+</style>
+    <div class="row h-100">
+        <div class="col-12 h-100 col-md-12">
             <!-- User Profile -->
             <section class="card">
                 <div class="card-content">
                     <div class="card-body">
                         <div class="row d-flex justify-content-end align-content-end pr-5">
-                            <button data-toggle="modal" data-target="#registerPatiens" class="btn btn-primary">Nuevo
-                                paciente</button>
+                            <a href="{{route('show.register')}}" class="btn btn-primary">Nuevo
+                                paciente</a>
                         </div>
                         <div class="dropdown-divider mb-5"></div>
-                        <table id="table_patients" class="table dt-responsive nowrap" style="width:100%">
+                        <table id="table_patients" class="table dt-responsive table-sm table-striped nowrap"
+                            style="width:100%">
                             <thead>
                                 <tr>
                                     <th>T/D</th>
@@ -69,15 +65,14 @@
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <button title="Ver datos" type="button" class="btn btn-primary"> <i
                                                         class="fa-solid fa-id-badge"></i></button>
-                                                <button title="Editar información" type="button"
-                                                        class="btn btn-success"><i
-                                                        class="fa-regular fa-pen-to-square"></i></button>
+                                                <a href="{{ route('show.update', $patient->id ) }}" title="Editar información" type="button" class="btn btn-success"><i
+                                                        class="fa-regular fa-pen-to-square"></i></a>
                                                 <button title="Historia clinica" type="button" class="btn btn-info"><i
                                                         class="fa-sharp fa-solid fa-laptop-medical"></i></button>
                                                 <button title="Email" type="button" class="btn btn-light"><i
                                                         class="fa-regular fa-envelope"></i></button>
-                                                <button title="Whatsaap" type="button" class="btn btn-success"><i
-                                                        class="fa-brands fa-whatsapp"></i></button>
+                                                <a title="Whatsaap" target="_black" href="https://api.whatsapp.com/send?phone=57{{ $patient->celular }}&text=Hola%20%F0%9F%91%8B" type="button" class="btn btn-success"><i
+                                                        class="fa-brands fa-whatsapp"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -98,11 +93,15 @@
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
                 },
+                "info": false,
+                responsive: true,
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ]
             });
+
+            
         });
 
         function confirmEditar(id) {
@@ -119,7 +118,7 @@
                 if (result.isConfirmed) {
                     const form = document.createElement('form');
                     form.method = 'POST';
-                    form.action = `/patientEdit/${id}`;
+                    form.action = `/patientActive/${id}`;
                     form.style.display = 'none';
                     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                     const methodField = document.createElement('input');

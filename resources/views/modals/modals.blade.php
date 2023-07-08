@@ -1,4 +1,4 @@
-<!-- Registro de pacientes -->
+{{-- <!-- Registro de pacientes -->
 <div class="modal fade" id="registerPatiens" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -272,4 +272,4 @@
         document.getElementById('edadPaciente').value = edad;
 
     }
-</script>
+</script> --}}

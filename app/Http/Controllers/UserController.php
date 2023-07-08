@@ -18,9 +18,7 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
 
-        $user = User::join('professions', 'users.profession_id', '=', 'professions.id')
-        ->select('*')
-        ->where('users.id', '=', $id)
+        $user = User::where('users.id', '=', $id)
         ->get();
 
         $profession = Profession::all();

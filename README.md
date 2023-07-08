@@ -64,3 +64,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Ejecución de seedear
+
+php artisan db:seed --class=Country    
+php artisan db:seed --class=RegimenEPS    
+php artisan db:seed --class=Sex    
+php artisan db:seed --class=StateCivil    
+php artisan db:seed --class=TypeDocument    
