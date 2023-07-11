@@ -34,8 +34,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/patientsPost', [App\Http\Controllers\PatiensController::class, 'showRegister'])->name('show.register');
     Route::post('/patientsPost', [App\Http\Controllers\PatiensController::class, 'register'])->name('patients.register');
     Route::get('/patientEdit/{id}', [App\Http\Controllers\PatiensController::class, 'showEdit'])->name('show.update');
+    Route::post('/patientEdit/{id}', [App\Http\Controllers\PatiensController::class, 'update'])->name('patients.update');
+
+    Route::get('/history/{id}', [App\Http\Controllers\PatiensController::class, 'history'])->name('patiens.history');
 
 
     Route::put('/patientActive/{id}', [App\Http\Controllers\PatiensController::class, 'activePatient'])->name('patiens.active');
+
+
+    //Especialistas
+    Route::get('/specialists', [App\Http\Controllers\SpecialistsController::class, 'index'])->name('specialists.list');
 
 });

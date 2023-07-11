@@ -1,6 +1,8 @@
 @extends('layouts.app')
 {{-- @include('../modals.modals') --}}
 
+@section('name_module', "Pacientes")
+    
 @section('content')
 
 <style>
@@ -38,18 +40,18 @@
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
                                 @foreach ($patients as $patient)
                                     <tr>
-                                        <td>{{ $patient->type_document }}</td>
+                                        <td>{{ $patient->type_document_name }}</td>
                                         <td>{{ $patient->document }}</td>
                                         <td>{{ $patient->name }} {{ $patient->second_name }}</td>
                                         <td>{{ $patient->surname }} {{ $patient->second_Surname }}</td>
                                         <td>
                                             <button type="button"
-                                                class="btn {{ $patient['sex'] === 'M' ? 'btn-primary' : 'btn-danger' }}">
-                                                <i class="fa-solid fa-{{ $patient['sex'] === 'M' ? 'mars' : 'venus' }}"></i>
-                                                {{ $patient['sex'] === 'M' ? 'Hombre' : 'Mujer' }}
+                                                class="btn {{ $patient['sex_name'] === 'M' ? 'btn-primary' : 'btn-danger' }}">
+                                                <i class="fa-solid fa-{{ $patient['sex_name'] === 'M' ? 'mars' : 'venus' }}"></i>
+                                                {{ $patient['sex_name'] === 'M' ? 'Hombre' : 'Mujer' }}
                                             </button>
                                         </td>
                                         <td>{{ $patient->age }} años</td>
@@ -63,12 +65,10 @@
                                         </td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button title="Ver datos" type="button" class="btn btn-primary"> <i
-                                                        class="fa-solid fa-id-badge"></i></button>
                                                 <a href="{{ route('show.update', $patient->id ) }}" title="Editar información" type="button" class="btn btn-success"><i
                                                         class="fa-regular fa-pen-to-square"></i></a>
-                                                <button title="Historia clinica" type="button" class="btn btn-info"><i
-                                                        class="fa-sharp fa-solid fa-laptop-medical"></i></button>
+                                                <a href="{{ url('/history/'.$patient->id)}}" title="Historia clinica" type="button" class="btn btn-info"><i
+                                                        class="fa-sharp fa-solid fa-laptop-medical"></i></a>
                                                 <button title="Email" type="button" class="btn btn-light"><i
                                                         class="fa-regular fa-envelope"></i></button>
                                                 <a title="Whatsaap" target="_black" href="https://api.whatsapp.com/send?phone=57{{ $patient->celular }}&text=Hola%20%F0%9F%91%8B" type="button" class="btn btn-success"><i

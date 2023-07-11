@@ -7,7 +7,7 @@
                 <!-- <p>CT</p> -->
             </a>
             <a href="{{ route('home') }}" class="simple-text logo-normal">
-                Creative Tim
+                    <Main>ATENCIÓN PUNTUAL</Main>
                 <!-- <div class="logo-image-big">
             <img src="{{ asset('build/assets/img/logo-big.png') }}">
           </div> -->
@@ -28,9 +28,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./map.html">
-                        <i class="nc-icon nc-pin-3"></i>
-                        <p>Maps</p>
+                    <a href="{{ route('specialists.list') }}">
+                        <i class="nc-icon nc-single-02"></i>
+                        <p>Especialistas</p>
                     </a>
                 </li>
                 <li>

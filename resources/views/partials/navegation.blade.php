@@ -8,7 +8,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+            <a class="navbar-brand" href="javascript:;">@yield('name_module')</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,9 +43,7 @@
                                 <div class="dropdown-divider"></div><a class="dropdown-item"
                                     href="{{ route('user.profile', ['id' => Auth::user()->id]) }}"><i
                                         class="ft-user"></i>
-                                    Profile</a><a class="dropdown-item"><i class="icon-wallet"></i>
-                                    My
-                                    Wallet</a><a class="dropdown-item"><i class="ft-check-square"></i> Transactions </a>
+                                    Mi Perfil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

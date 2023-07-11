@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@include('../modals.modals')
+@section('name_module', "Registro del Paciente")
 
 @section('content')
     <div class="row h-100">
@@ -20,10 +20,10 @@
                                             <select placeholder="Seleccione..." list="dataListTipoDocumento"
                                                 name="tipoDocvumento" id="search-input-pais" class="form-control">
                                                 <option selected>Seleccione</option>
-                                                <option value="RC">Registro Civil</option>
-                                                <option value="CC">Cedula de Ciudadanía</option>
-                                                <option value="TI">Tarjeta de Identidad</option>
-                                                <option value="PA">Pasaporte</option>
+                                                @foreach ($typeDocuments as $typeDocument)
+                                                    <option value="{{ $typeDocument->id }}">{{ $typeDocument->name }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -110,8 +110,9 @@
                                             <select placeholder="Seleccione..." list="dataListSexo" name="sexo"
                                                 id="search-input-pais" class="form-control">
                                                 <option selected>Seleccione</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
+                                                @foreach ($sexes as $sex)
+                                                    <option value="{{ $sex->id }}">{{ $sex->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -142,10 +143,9 @@
                                             <select placeholder="Seleccione..." list="dataListPais" name="pais"
                                                 id="search-input-pais" class="form-control">
                                                 <option selected>Seleccione</option>
-                                                <option value="Colombia">Colombia</option>
-                                                <option value="Venezuela">Venezuela</option>
-                                                <option value="Panamá">Panamá</option>
-                                                <option value="Otro">Otro</option>
+                                                @foreach ($countries as $country)
+                                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -192,7 +192,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">E-mail</label><small
-                                            class="text-danger h5">*</small>
+                                                class="text-danger h5">*</small>
                                             <input type="email" name="email" class="form-control"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
@@ -203,11 +203,9 @@
                                             <select type="text" name="estadoCivil" class="form-control"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                                                 <option selected>Seleccione...</option>
-                                                <option value="Soltero">Soltero</option>
-                                                <option value="Casado">Casado</option>
-                                                <option value="Viudo">Viudo</option>
-                                                <option value="Separado">Soltero</option>
-                                                <option value="Unión libre">Unión libre</option>
+                                                @foreach ($stateCivils as $stateCivil)
+                                                    <option value="{{ $stateCivil->id }}">{{ $stateCivil->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -222,8 +220,10 @@
                                             <select placeholder="Seleccione..." list="dataListRegimen" name="regimen"
                                                 id="search-input-pais" class="form-control">
                                                 <option selected>Seleccione</option>
-                                                <option value="Subsidiado">Subsidiado</option>
-                                                <option value="Contributivo">Contributivo</option>
+                                                @foreach ($regimenEPSs as $regimenEPS)
+                                                    <option value="{{ $regimenEPS->id }}">{{ $regimenEPS->name }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -240,8 +240,7 @@
                                 <div class="row mt-5">
                                     <div class="col-md-12">
                                         <div class="form-group form-check">
-                                            <input checked type="checkbox" name="terminosCondiciones"
-                                                id="exampleCheck1">
+                                            <input checked type="checkbox" name="terminosCondiciones" id="exampleCheck1">
                                             <label class="form-check-label" for="exampleCheck1">Acepto terminos y
                                                 condiciones</label>
                                         </div>
@@ -249,7 +248,8 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="reset" class="btn btn-secondary"
+                                        data-dismiss="modal">Cancelar</button>
                                     <button type="submit" class="btn btn-primary">Guardar registro</button>
                                 </div>
                             </form>
@@ -259,25 +259,24 @@
             </section>
         </div>
     </div>
-    
 
-<script>
-    function calcularEdad() {
-        var fechaNacimiento = document.getElementById('fecha_nacimiento').value;
-        var hoy = new Date();
-        var fechaNac = new Date(fechaNacimiento);
-        var edad = hoy.getFullYear() - fechaNac.getFullYear();
-        var mes = hoy.getMonth() - fechaNac.getMonth();
 
-        if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
-            edad--;
+    <script>
+        function calcularEdad() {
+            var fechaNacimiento = document.getElementById('fecha_nacimiento').value;
+            var hoy = new Date();
+            var fechaNac = new Date(fechaNacimiento);
+            var edad = hoy.getFullYear() - fechaNac.getFullYear();
+            var mes = hoy.getMonth() - fechaNac.getMonth();
+
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+
+            //   return edad;
+            console.log(edad);
+            document.getElementById('edadPaciente').value = edad;
+
         }
-
-        //   return edad;
-        console.log(edad);
-        document.getElementById('edadPaciente').value = edad;
-
-    }
-</script> 
-
+    </script>
 @endsection
