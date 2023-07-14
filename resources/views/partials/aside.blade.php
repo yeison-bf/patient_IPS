@@ -7,7 +7,7 @@
                 <!-- <p>CT</p> -->
             </a>
             <a href="{{ route('home') }}" class="simple-text logo-normal">
-                    <Main>ATENCIÓN PUNTUAL</Main>
+                <Main>ATENCIÓN PUNTUAL</Main>
                 <!-- <div class="logo-image-big">
             <img src="{{ asset('build/assets/img/logo-big.png') }}">
           </div> -->
@@ -21,42 +21,56 @@
                         <p>Inicio</p>
                     </a>
                 </li>
+                {{-- Configuraciones --}}
                 <li>
-                    <a href="{{ route('patiens.list') }}">
-                        <i class="nc-icon nc-single-02"></i>
-                        <p>Pacientes</p>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="nc-icon nc-settings"></i>
+                        <small style="font-size: 0.8rem" class="p">Configuraciones</small>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg-right border">
+                        <a href="{{ route('roles.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Roles</a>
+                        <a href="{{ route('professions.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Profesiones</a>
+                    </div>
                 </li>
+
+                {{-- Pacientes --}}
                 <li>
-                    <a href="{{ route('specialists.list') }}">
-                        <i class="nc-icon nc-single-02"></i>
-                        <p>Especialistas</p>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-users"></i>
+                        <small style="font-size: 0.8rem" class="p">Pacientes</small>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg-right border">
+                        <a href="{{ route('patiens.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Pacientes</a>
+                        <a class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Historias clinicas</a>
+                    </div>
                 </li>
+
+                {{-- Especialistas --}}
                 <li>
-                    <a href="./notifications.html">
-                        <i class="nc-icon nc-bell-55"></i>
-                        <p>Notifications</p>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <small style="font-size: 0.8rem" class="p">Especialistas</small>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg-right border">
+                        <a href="{{ route('specialists.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Especialistas</a>
+                        <a class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Turnos</a>
+                    </div>
                 </li>
+
+                {{-- Atenciones --}}
                 <li>
-                    <a href="./user.html">
-                        <i class="nc-icon nc-single-02"></i>
-                        <p>User Profile</p>
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-kit-medical"></i>
+                        <small style="font-size: 0.8rem" class="p">Atenciones</small>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg-right border">
+                        <a href="{{ route('specialists.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Citas</a>
+                        <a class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Agendas</a>
+                    </div>
                 </li>
-                <li>
-                    <a href="./tables.html">
-                        <i class="nc-icon nc-tile-56"></i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./typography.html">
-                        <i class="nc-icon nc-caps-small"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
+
+
+                
                 <li class="active-pro">
                     <a href="./upgrade.html">
                         <i class="nc-icon nc-spaceship"></i>

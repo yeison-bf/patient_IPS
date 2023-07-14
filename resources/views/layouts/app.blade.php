@@ -30,6 +30,8 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="">
@@ -42,7 +44,7 @@
             <!-- Navbar -->
             @include('partials.navegation')
             <!-- End Navbar -->
-            <div class="content h-100">
+            <div class="content vh-100">
                 @yield('content')
             </div>
             <footer class="footer footer-black fixed-bottom footer-white ">

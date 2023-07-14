@@ -8,7 +8,7 @@
                 <div class="card-content">
                     <div class="card-body p-5">
                         <div class="row">
-                            <form class="col-md-12" method="POST" action="/specialists">
+                            <form class="col-md-12" method="POST" action="/especislists/{{$user->id}}">
                                 @csrf
                                 <h4>Información básica</h4>
                                 <div class="dropdown-divider"></div>
@@ -18,7 +18,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Documento</label><small
                                                 class="text-danger h5">*</small>
-                                            <input onkeyup="generarPassword()" type="number" name="documento" class="form-control"
+                                            <input type="number" value="{{$user->document}}" name="documento" class="form-control"
                                                 id="documento" aria-describedby="emailHelp">
                                         </div>
                                     </div>
@@ -26,7 +26,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nombres</label><small
                                                 class="text-danger h5">*</small>
-                                            <input type="text" name="nombres" class="form-control"
+                                            <input value="{{$user->name}}" type="text" name="nombres" class="form-control"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
@@ -34,7 +34,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Apellidos</label> <small
                                                 class="text-danger h5">*</small>
-                                            <input type="text" name="apellidos" class="form-control"
+                                            <input value="{{$user->lastname}}" type="text" name="apellidos" class="form-control"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
@@ -46,9 +46,14 @@
                                                 class="text-danger h5">*</small>
                                             <select placeholder="Seleccione..." list="dataListSexo" name="roles"
                                                 id="search-input-pais" class="form-control">
-                                                <option selected>Seleccione</option>
                                                 @foreach ($roles as $role)
-                                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                    @if ($role->id === $user->role)
+                                                        <option selected value="{{ $role->id }}">
+                                                           {{ $role->name }}</option>
+                                                    @else
+                                                        <option value="{{ $role->id }}">
+                                                            {{ $role->name }}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -57,7 +62,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Email</label><small
                                                 class="text-danger h5">*</small>
-                                            <input name="email"  id="fecha_nacimiento"
+                                            <input value="{{$user->email}}" name="email"  id="fecha_nacimiento"
                                                 type="email" class="form-control" aria-describedby="emailHelp">
                                         </div>
                                     </div>
@@ -65,8 +70,8 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Password</label><small
                                                 class="text-danger h5">*</small>
-                                            <input readonly type="password" name="password" class="form-control" 
-                                                id="password" aria-describedby="emailHelp">
+                                            <input value="************************" readonly type="password"  class="form-control" 
+                                                 aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                 </div>
@@ -80,8 +85,14 @@
                                             <select placeholder="Seleccione..." list="dataListPais" name="profesion"
                                                 id="search-input-pais" class="form-control">
                                                 <option selected>Seleccione</option>
-                                                @foreach ($professions as $profession)
-                                                    <option value="{{ $profession->id }}">{{ $profession->name }}</option>
+                                                @foreach ($professions as $profesion)
+                                                    @if ($profesion->id === $user->profesion)
+                                                    <option selected value="{{ $profesion->id }}">
+                                                       {{ $profesion->name }}</option>
+                                                @else
+                                                    <option value="{{ $profesion->id }}">
+                                                        {{ $profesion->name }}</option>
+                                                @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -90,7 +101,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Ciudad / Municipio</label><small
                                                 class="text-danger h5">*</small>
-                                            <input type="text" class="form-control" name="ciudad"
+                                            <input value="{{$user->city}}" type="text" class="form-control" name="ciudad"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
@@ -98,7 +109,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Dirección</label><small
                                             class="text-white h5">*</small>
-                                            <input type="text" name="direccion" class="form-control"
+                                            <input value="{{$user->location}}" type="text" name="direccion" class="form-control"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
@@ -106,7 +117,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Celular</label><small
                                                 class="text-danger h5">*</small>
-                                            <input type="number" name="celular" class="form-control"
+                                            <input value="{{$user->numberPhone}}" type="number" name="celular" class="form-control"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
@@ -133,12 +144,4 @@
             </section>
         </div>
     </div>
-
-
-    <script>
-        function generarPassword() {
-            var documento = document.getElementById('documento').value;
-            document.getElementById('password').value=documento;
-        }
-    </script>
 @endsection

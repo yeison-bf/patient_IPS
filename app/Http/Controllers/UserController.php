@@ -17,14 +17,12 @@ class UserController extends Controller
      */
     public function show(Request $request, $id)
     {
-
         $user = User::where('users.id', '=', $id)
         ->get();
 
         $profession = Profession::all();
 
         return view('profile', compact('user', 'profession'));
-        //return response()->json($user);
     }
 
     /**

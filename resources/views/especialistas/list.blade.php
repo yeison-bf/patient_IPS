@@ -22,7 +22,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <div class="row d-flex justify-content-end align-content-end pr-5">
-                            <a href="{{route('show.register')}}" class="btn btn-primary">Nuevo
+                            <a href="{{route('show.registerEsp')}}" class="btn btn-primary">Nuevo
                                 profesional</a>
                         </div>
                         <div class="dropdown-divider mb-5"></div>
@@ -35,37 +35,43 @@
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Especialidad</th>
+                                    <th>Role</th>
                                     <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody> 
+                                @foreach ($users as $user)
+                                    
                                     <tr>
-                                        <td>CC</td>
-                                        <td>1051822599</td>
-                                        <td>Rafael Gustavo</td>
-                                        <td>Barrios Gutierrez</td>
-                                        <td>CARDIOLOGO</td>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{$user->document}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->lastname}}</td>
+                                        <td>{{$user->professions_name}}</td>
+                                        <td>{{$user->nameRole}}</td>
                                         <td>
-                                            <button type="button" 
-                                                class="btn btn-primary ">
-                                                <i class="fa-solid fa-user-large"></i>
-                                                Activo
+                                            <button type="button" onclick="confirmActivación('{{ $user->id }}')"
+                                                class="btn {{ $user['estado'] === 1 ? 'btn-primary' : 'btn-danger' }}">
+                                                <i
+                                                    class="fa-solid fa-{{ $user['estado'] === 1 ? 'user-large' : 'user-slash' }}"></i>
+                                                {{ $user['estado'] === 1 ? 'Activo' : 'Inactivo' }}
                                             </button>
                                         </td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a  title="Editar información" type="button" class="btn btn-success"><i
+                                                <a href="{{ route('specialists.show.edit', $user->id ) }}" title="Editar información" type="button" class="btn btn-success"><i
                                                         class="fa-regular fa-pen-to-square"></i></a>
-                                                <a  title="Historia clinica" type="button" class="btn btn-info"><i
-                                                        class="fa-sharp fa-solid fa-laptop-medical"></i></a>
                                                 <button title="Email" type="button" class="btn btn-light"><i
                                                         class="fa-regular fa-envelope"></i></button>
-                                                <a title="Whatsaap" target="_black"  type="button" class="btn btn-success"><i
-                                                        class="fa-brands fa-whatsapp"></i></a>
+                                                <a title="Whatsaap" target="_black" href="https://api.whatsapp.com/send?phone=57{{ $user->numberPhone }}&text=Hola%20%F0%9F%91%8B" type="button" class="btn btn-success"><i
+                                                            class="fa-brands fa-whatsapp"></i></a>
                                             </div>
                                         </td>
                                     </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -92,35 +98,35 @@
             
         });
 
-        // function confirmEditar(id) {
-        //     Swal.fire({
-        //         title: '¿Estás seguro?',
-        //         text: "Seguro quieres Inabilitar al paciente!",
-        //         icon: 'warning',
-        //         showCancelButton: true,
-        //         confirmButtonColor: '#3085d6',
-        //         cancelButtonColor: '#d33',
-        //         confirmButtonText: 'Si, estudoy seguro!',
-        //         cancelButtonText: 'No, cancelar!'
-        //     }).then((result) => {
-        //         if (result.isConfirmed) {
-        //             const form = document.createElement('form');
-        //             form.method = 'POST';
-        //             form.action = `/patientActive/${id}`;
-        //             form.style.display = 'none';
-        //             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        //             const methodField = document.createElement('input');
-        //             methodField.name = '_method';
-        //             methodField.value = 'PUT';
-        //             const csrfField = document.createElement('input');
-        //             csrfField.name = '_token';
-        //             csrfField.value = csrfToken;
-        //             form.appendChild(methodField);
-        //             form.appendChild(csrfField);
-        //             document.body.appendChild(form);
-        //             form.submit();
-        //         }
-        //     })
-        // }
+        function confirmActivación(id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¿Seguro quieres Activar/Inabilitar al profesional medico?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, estudoy seguro!',
+                cancelButtonText: 'No, cancelar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = `/especialistActive/${id}`;
+                    form.style.display = 'none';
+                    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    const methodField = document.createElement('input');
+                    methodField.name = '_method';
+                    methodField.value = 'PUT';
+                    const csrfField = document.createElement('input');
+                    csrfField.name = '_token';
+                    csrfField.value = csrfToken;
+                    form.appendChild(methodField);
+                    form.appendChild(csrfField);
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            })
+        }
     </script>
 @endsection

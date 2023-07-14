@@ -73,3 +73,5 @@ php artisan db:seed --class=RegimenEPS
 php artisan db:seed --class=Sex    
 php artisan db:seed --class=StateCivil    
 php artisan db:seed --class=TypeDocument    
+php artisan db:seed --class=Role    
+php artisan db:seed --class=Profession    

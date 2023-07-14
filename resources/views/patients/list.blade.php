@@ -22,7 +22,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <div class="row d-flex justify-content-end align-content-end pr-5">
-                            <a href="{{route('show.register')}}" class="btn btn-primary">Nuevo
+                            <a href="/patientsPost" class="btn btn-primary">Nuevo
                                 paciente</a>
                         </div>
                         <div class="dropdown-divider mb-5"></div>
@@ -107,7 +107,7 @@
         function confirmEditar(id) {
             Swal.fire({
                 title: '¿Estás seguro?',
-                text: "Seguro quieres Inabilitar al paciente!",
+                text: "¿Seguro quieres Activar/Inabilitar al paciente?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
