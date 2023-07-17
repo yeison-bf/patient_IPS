@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FullCalenderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -61,4 +62,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/professions', [App\Http\Controllers\ProfessionController::class, 'create'])->name('professions.register');
     Route::post('/professionsUpdate', [App\Http\Controllers\ProfessionController::class, 'update'])->name('professions.update');
 
+
+
+
+    // Turnos especialistas
+
+    Route::get('/calendar-event', [FullCalenderController::class, 'index'])->name('calendar-event');
+    Route::post('/calendar-crud-ajax', [FullCalenderController::class, 'calendarEvents']);
+
+
+    // Agendamiento de citas
+    Route::get('/citas', [App\Http\Controllers\AtentionController::class, 'index'])->name('atenciones.create');
 });

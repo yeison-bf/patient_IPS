@@ -7,7 +7,7 @@
                 <!-- <p>CT</p> -->
             </a>
             <a href="{{ route('home') }}" class="simple-text logo-normal">
-                <Main>ATENCIÓN PUNTUAL</Main>
+                <Main>Next Atention</Main>
                 <!-- <div class="logo-image-big">
             <img src="{{ asset('build/assets/img/logo-big.png') }}">
           </div> -->
@@ -28,8 +28,8 @@
                         <small style="font-size: 0.8rem" class="p">Configuraciones</small>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg-right border">
-                        <a href="{{ route('roles.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Roles</a>
-                        <a href="{{ route('professions.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Profesiones</a>
+                        <a href="{{ route('roles.list') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Roles</a>
+                        <a href="{{ route('professions.list') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Profesiones</a>
                     </div>
                 </li>
 
@@ -40,8 +40,8 @@
                         <small style="font-size: 0.8rem" class="p">Pacientes</small>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg-right border">
-                        <a href="{{ route('patiens.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Pacientes</a>
-                        <a class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Historias clinicas</a>
+                        <a href="{{ route('patiens.list') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Pacientes</a>
+                        <a class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Historias clinicas</a>
                     </div>
                 </li>
 
@@ -52,8 +52,8 @@
                         <small style="font-size: 0.8rem" class="p">Especialistas</small>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg-right border">
-                        <a href="{{ route('specialists.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Especialistas</a>
-                        <a class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Turnos</a>
+                        <a href="{{ route('specialists.list') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Especialistas</a>
+                        <a href="{{route('calendar-event')}}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Turnos</a>
                     </div>
                 </li>
 
@@ -64,8 +64,8 @@
                         <small style="font-size: 0.8rem" class="p">Atenciones</small>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg-right border">
-                        <a href="{{ route('specialists.list') }}" class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Citas</a>
-                        <a class="dropdown-item" type="button"><i class="fa-solid fa-caret-right"></i>Agendas</a>
+                        <a href="{{ route('atenciones.create') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Citas</a>
+                        <a  class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Agendas</a>
                     </div>
                 </li>
 
