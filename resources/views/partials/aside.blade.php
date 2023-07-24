@@ -30,6 +30,7 @@
                     <div class="dropdown-menu dropdown-menu-lg-right border">
                         <a href="{{ route('roles.list') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Roles</a>
                         <a href="{{ route('professions.list') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Profesiones</a>
+                        <a href="{{ route('company.create') }}" class="dropdown-item" ><i class="fa-solid fa-caret-right"></i>Empresa</a>
                     </div>
                 </li>
 

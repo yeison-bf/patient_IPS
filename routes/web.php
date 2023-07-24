@@ -56,6 +56,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/roles', [App\Http\Controllers\RolesPermissionsController::class, 'create'])->name('roles.post');
     Route::post('/rolesEditar', [App\Http\Controllers\RolesPermissionsController::class, 'update'])->name('roles.update');
 
+    
+    //Configuraciones
+    Route::get('/configuration', [App\Http\Controllers\ConfigurationController::class, 'index'])->name('company.create');
+    Route::post('/upload',[App\Http\Controllers\ConfigurationController::class, 'upload'])->name('upload');
+    Route::post('/configuration',[App\Http\Controllers\ConfigurationController::class, 'create'])->name('create.configuration');
+
 
     //Profesiones
     Route::get('/professions', [App\Http\Controllers\ProfessionController::class, 'index'])->name('professions.list');
@@ -63,10 +69,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/professionsUpdate', [App\Http\Controllers\ProfessionController::class, 'update'])->name('professions.update');
 
 
-
-
     // Turnos especialistas
-
     Route::get('/calendar-event', [FullCalenderController::class, 'index'])->name('calendar-event');
     Route::post('/calendar-crud-ajax', [FullCalenderController::class, 'calendarEvents']);
 

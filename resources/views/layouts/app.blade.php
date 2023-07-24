@@ -30,22 +30,31 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
 
 
-        
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
-  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   
+
+
+    <!-- Incluir la librería Dropzone desde el CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css">
+
+
 </head>
 
 <body class="">
@@ -69,7 +78,7 @@
                                 ©
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script> Crategica Global Group S.A.S <i class="fa fa-heart heart"></i> 
+                                </script> Crategica Global Group S.A.S <i class="fa fa-heart heart"></i>
                             </span>
                         </div>
                     </div>
@@ -77,22 +86,9 @@
             </footer>
         </div>
     </div>
-    <!--   Core JS Files   -->
-    {{-- <script src="{{ asset('build/assets/js/core/jquery.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('build/assets/js/core/popper.min.js') }}"></script> --}}
+   
     <script src="{{ asset('build/assets/js/core/bootstrap.min.js') }}"></script>
-    {{-- <script src="{{ asset('build/assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script> --}}
-    <!--  Google Maps Plugin    -->
-    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
-    <!-- Chart JS -->
-    {{-- <script src="{{ asset('build/assets/js/plugins/chartjs.min.js') }}"></script> --}}
-    <!--  Notifications Plugin    -->
-    {{-- <script src="{{ asset('build/assets/js/plugins/bootstrap-notify.js') }}"></script> --}}
-    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-    {{-- <script src="{{ asset('build/assets/js/paper-dashboard.min.js?v=2.0.1') }}" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! --> --}}
-    {{-- <script src="{{ asset('build/assets/demo/demo.js') }}"></script> --}}
-
-
+  
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
